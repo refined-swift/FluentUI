@@ -1,12 +1,12 @@
 Pod::Spec.new do |spec|
   spec.name         = "FluentUI"
-  spec.version      = "0.1.0"
+  spec.version      = "0.2.0"
   spec.summary      = "Fluent interface for UIKit."
 
   spec.description  = <<-DESC
   FluentUI provides a fluent interface for UIKit.
   It adds modifier methods for most writable properties found in UIKit classes.
-  It has been created in the hope that it will help application maintainers to reason about UIKit code in a more SwiftUI-ish way (i.e. configuring views by applying modifiers).
+  It has been created in the hope that it will help application maintainers to reason about UIKit code in a more SwiftUI-ish way (i.e. configuring views by applying side-effects free modifiers).
                    DESC
 
   spec.homepage     = "https://github.com/refined-swift/FluentUI"
