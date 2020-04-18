@@ -86,12 +86,12 @@ extension UIAccessibilityCustomRotor {
 
 @available(iOS 10.0, tvOS 10.0, *)
 extension UIAccessibilityCustomRotorItemResult {
-    public func set(targetElement: NSObject?) -> Self {
+    public func set(targetElement: NSObjectProtocol?) -> Self {
         self.targetElement = targetElement
         return self
     }
 
-    public func set(targetRange: UITextRange) -> Self {
+    public func set(targetRange: UITextRange?) -> Self {
         self.targetRange = targetRange
         return self
     }
@@ -108,17 +108,17 @@ extension UIAccessibilityElement {
         return self
     }
 
-    public func set(accessibilityLabel: String) -> Self {
+    public func set(accessibilityLabel: String?) -> Self {
         self.accessibilityLabel = accessibilityLabel
         return self
     }
 
-    public func set(accessibilityHint: String) -> Self {
+    public func set(accessibilityHint: String?) -> Self {
         self.accessibilityHint = accessibilityHint
         return self
     }
 
-    public func set(accessibilityValue: String) -> Self {
+    public func set(accessibilityValue: String?) -> Self {
         self.accessibilityValue = accessibilityValue
         return self
     }
@@ -147,12 +147,12 @@ extension UIAction {
         return self
     }
 
-    public func set(image: UIImage) -> Self {
+    public func set(image: UIImage?) -> Self {
         self.image = image
         return self
     }
 
-    public func set(discoverabilityTitle: String) -> Self {
+    public func set(discoverabilityTitle: String?) -> Self {
         self.discoverabilityTitle = discoverabilityTitle
         return self
     }
@@ -209,7 +209,7 @@ extension UIActivityIndicatorView {
     }
 
     @available(iOS 5.0, *)
-    public func set(color: UIColor) -> Self {
+    public func set(color: UIColor!) -> Self {
         self.color = color
         return self
     }
@@ -218,7 +218,7 @@ extension UIActivityIndicatorView {
 @available(iOS 13.0, *)
 @available(tvOS, unavailable)
 extension UIActivityItemsConfiguration {
-    public func set(localObject: AnyObject?) -> Self {
+    public func set(localObject: Any?) -> Self {
         self.localObject = localObject
         return self
     }
@@ -233,18 +233,18 @@ extension UIActivityItemsConfiguration {
 extension UIActivityViewController {
     @available(iOS, introduced: 6.0, deprecated: 8.0)
     @available(tvOS, deprecated: 8.0)
-    public func set(completionHandler: @escaping UIActivityViewController.CompletionHandler) -> Self {
+    public func set(completionHandler: UIActivityViewController.CompletionHandler?) -> Self {
         self.completionHandler = completionHandler
         return self
     }
 
     @available(iOS 8.0, *)
-    public func set(completionWithItemsHandler: @escaping UIActivityViewController.CompletionWithItemsHandler) -> Self {
+    public func set(completionWithItemsHandler: UIActivityViewController.CompletionWithItemsHandler?) -> Self {
         self.completionWithItemsHandler = completionWithItemsHandler
         return self
     }
 
-    public func set(excludedActivityTypes: [UIActivity.ActivityType]) -> Self {
+    public func set(excludedActivityTypes: [UIActivity.ActivityType]?) -> Self {
         self.excludedActivityTypes = excludedActivityTypes
         return self
     }
@@ -264,14 +264,14 @@ extension UIAlertController {
         return self
     }
 
-    public func set(message: String) -> Self {
+    public func set(message: String?) -> Self {
         self.message = message
         return self
     }
 }
 
 extension UIApplication {
-    public func set(delegate: UIApplicationDelegate) -> Self {
+    public func set(delegate: UIApplicationDelegate?) -> Self {
         self.delegate = delegate
         return self
     }
@@ -302,14 +302,14 @@ extension UIApplication {
 
     @available(tvOS, unavailable)
     @available(iOS, introduced: 4.0, deprecated: 10.0)
-    public func set(scheduledLocalNotifications: [UILocalNotification]) -> Self {
+    public func set(scheduledLocalNotifications: [UILocalNotification]?) -> Self {
         self.scheduledLocalNotifications = scheduledLocalNotifications
         return self
     }
 
     @available(iOS 9.0, *)
     @available(tvOS, unavailable)
-    public func set(shortcutItems: [UIApplicationShortcutItem]) -> Self {
+    public func set(shortcutItems: [UIApplicationShortcutItem]?) -> Self {
         self.shortcutItems = shortcutItems
         return self
     }
@@ -349,22 +349,22 @@ extension UIMutableApplicationShortcutItem {
         return self
     }
 
-    public func set(localizedSubtitle: String) -> Self {
+    public func set(localizedSubtitle: String?) -> Self {
         self.localizedSubtitle = localizedSubtitle
         return self
     }
 
-    public func set(icon: UIApplicationShortcutIcon) -> Self {
+    public func set(icon: UIApplicationShortcutIcon?) -> Self {
         self.icon = icon
         return self
     }
 
-    public func set(userInfo: [String: AnyObject & NSSecureCoding]) -> Self {
+    public func set(userInfo: [String: NSSecureCoding]?) -> Self {
         self.userInfo = userInfo
         return self
     }
 
-    public func set(targetContentIdentifier: AnyObject) -> Self {
+    public func set(targetContentIdentifier: Any?) -> Self {
         self.targetContentIdentifier = targetContentIdentifier
         return self
     }
@@ -448,17 +448,17 @@ extension UIBarButtonItem {
         return self
     }
 
-    public func set(possibleTitles: Set<String>) -> Self {
+    public func set(possibleTitles: Set<String>?) -> Self {
         self.possibleTitles = possibleTitles
         return self
     }
 
-    public func set(customView: UIView) -> Self {
+    public func set(customView: UIView?) -> Self {
         self.customView = customView
         return self
     }
 
-    public func set(action: Selector) -> Self {
+    public func set(action: Selector?) -> Self {
         self.action = action
         return self
     }
@@ -469,7 +469,7 @@ extension UIBarButtonItem {
     }
 
     @available(iOS 5.0, *)
-    public func set(tintColor: UIColor) -> Self {
+    public func set(tintColor: UIColor?) -> Self {
         self.tintColor = tintColor
         return self
     }
@@ -517,25 +517,25 @@ extension UIBarItem {
         return self
     }
 
-    public func set(title: String) -> Self {
+    public func set(title: String?) -> Self {
         self.title = title
         return self
     }
 
-    public func set(image: UIImage) -> Self {
+    public func set(image: UIImage?) -> Self {
         self.image = image
         return self
     }
 
     @available(iOS 5.0, *)
     @available(tvOS, unavailable)
-    public func set(landscapeImagePhone: UIImage) -> Self {
+    public func set(landscapeImagePhone: UIImage?) -> Self {
         self.landscapeImagePhone = landscapeImagePhone
         return self
     }
 
     @available(iOS 11.0, tvOS 11.0, *)
-    public func set(largeContentSizeImage: UIImage) -> Self {
+    public func set(largeContentSizeImage: UIImage?) -> Self {
         self.largeContentSizeImage = largeContentSizeImage
         return self
     }
@@ -780,7 +780,7 @@ extension UICollectionViewCompositionalLayout {
 }
 
 extension UICollectionViewController {
-    public func set(collectionView: UICollectionView) -> Self {
+    public func set(collectionView: UICollectionView!) -> Self {
         self.collectionView = collectionView
         return self
     }
@@ -962,7 +962,7 @@ extension UICollisionBehavior {
         return self
     }
 
-    public func set(collisionDelegate: UICollisionBehaviorDelegate) -> Self {
+    public func set(collisionDelegate: UICollisionBehaviorDelegate?) -> Self {
         self.collisionDelegate = collisionDelegate
         return self
     }
@@ -975,12 +975,12 @@ extension UICommand {
         return self
     }
 
-    public func set(image: UIImage) -> Self {
+    public func set(image: UIImage?) -> Self {
         self.image = image
         return self
     }
 
-    public func set(discoverabilityTitle: String) -> Self {
+    public func set(discoverabilityTitle: String?) -> Self {
         self.discoverabilityTitle = discoverabilityTitle
         return self
     }
@@ -1004,7 +1004,7 @@ extension UIContextualAction {
         return self
     }
 
-    public func set(backgroundColor: UIColor?) -> Self {
+    public func set(backgroundColor: UIColor!) -> Self {
         self.backgroundColor = backgroundColor
         return self
     }
@@ -1049,17 +1049,17 @@ extension UIDatePicker {
         return self
     }
 
-    public func set(locale: Locale) -> Self {
+    public func set(locale: Locale?) -> Self {
         self.locale = locale
         return self
     }
 
-    public func set(calendar: Calendar) -> Self {
+    public func set(calendar: Calendar!) -> Self {
         self.calendar = calendar
         return self
     }
 
-    public func set(timeZone: TimeZone) -> Self {
+    public func set(timeZone: TimeZone?) -> Self {
         self.timeZone = timeZone
         return self
     }
@@ -1069,12 +1069,12 @@ extension UIDatePicker {
         return self
     }
 
-    public func set(minimumDate: Date) -> Self {
+    public func set(minimumDate: Date?) -> Self {
         self.minimumDate = minimumDate
         return self
     }
 
-    public func set(maximumDate: Date) -> Self {
+    public func set(maximumDate: Date?) -> Self {
         self.maximumDate = maximumDate
         return self
     }
@@ -1137,7 +1137,7 @@ extension UIDocument {
     }
 
     @available(tvOS, unavailable)
-    public func set(undoManager: UndoManager?) -> Self {
+    public func set(undoManager: UndoManager!) -> Self {
         self.undoManager = undoManager
         return self
     }
@@ -1236,7 +1236,7 @@ extension UIDocument {
             return self
         }
 
-        public func set(targetView: UIView) -> Self {
+        public func set(targetView: UIView?) -> Self {
             self.targetView = targetView
             return self
         }
@@ -1250,22 +1250,22 @@ extension UIDocumentInteractionController {
         return self
     }
 
-    public func set(url: URL) -> Self {
+    public func set(url: URL?) -> Self {
         self.url = url
         return self
     }
 
-    public func set(uti: String) -> Self {
+    public func set(uti: String?) -> Self {
         self.uti = uti
         return self
     }
 
-    public func set(name: String) -> Self {
+    public func set(name: String?) -> Self {
         self.name = name
         return self
     }
 
-    public func set(annotation: AnyObject) -> Self {
+    public func set(annotation: Any?) -> Self {
         self.annotation = annotation
         return self
     }
@@ -1300,7 +1300,7 @@ extension UIDocumentPickerViewController {
     }
 
     @available(iOS 13.0, tvOS 13.0, *)
-    public func set(directoryURL: URL) -> Self {
+    public func set(directoryURL: URL?) -> Self {
         self.directoryURL = directoryURL
         return self
     }
@@ -1323,7 +1323,7 @@ extension UIDragInteraction {
 @available(iOS 11.0, *)
 @available(tvOS, unavailable)
 extension UIDragItem {
-    public func set(localObject: AnyObject?) -> Self {
+    public func set(localObject: Any?) -> Self {
         self.localObject = localObject
         return self
     }
@@ -1444,7 +1444,7 @@ extension UIFocusGuide {
     }
 
     @available(iOS 10.0, tvOS 10.0, *)
-    public func set(preferredFocusEnvironments: [AnyObject & UIFocusEnvironment]?) -> Self {
+    public func set(preferredFocusEnvironments: [UIFocusEnvironment]!) -> Self {
         self.preferredFocusEnvironments = preferredFocusEnvironments
         return self
     }
@@ -1459,12 +1459,12 @@ extension UIFocusGuide {
 @available(iOS 13.0, *)
 @available(tvOS, unavailable)
 extension UIFontPickerViewController {
-    public func set(delegate: UIFontPickerViewControllerDelegate) -> Self {
+    public func set(delegate: UIFontPickerViewControllerDelegate?) -> Self {
         self.delegate = delegate
         return self
     }
 
-    public func set(selectedFontDescriptor: UIFontDescriptor) -> Self {
+    public func set(selectedFontDescriptor: UIFontDescriptor?) -> Self {
         self.selectedFontDescriptor = selectedFontDescriptor
         return self
     }
@@ -1488,7 +1488,7 @@ extension UIFontPickerViewController.Configuration {
         return self
     }
 
-    public func set(filteredLanguagesPredicate: NSPredicate) -> Self {
+    public func set(filteredLanguagesPredicate: NSPredicate?) -> Self {
         self.filteredLanguagesPredicate = filteredLanguagesPredicate
         return self
     }
@@ -1540,7 +1540,7 @@ extension UIGestureRecognizer {
 
     @available(iOS 11.0, *)
     @available(tvOS 11.0, *)
-    public func set(name: String) -> Self {
+    public func set(name: String?) -> Self {
         self.name = name
         return self
     }
@@ -1578,7 +1578,7 @@ extension UIGraphicsImageRendererFormat {
 
 @available(iOS 10.0, tvOS 10.0, *)
 extension UIGraphicsPDFRendererFormat {
-    public func set(documentInfo: [String: AnyObject]) -> Self {
+    public func set(documentInfo: [String: Any]) -> Self {
         self.documentInfo = documentInfo
         return self
     }
@@ -1655,7 +1655,7 @@ extension UIImagePickerController {
     }
 
     @available(iOS 3.1, *)
-    public func set(cameraOverlayView: UIView) -> Self {
+    public func set(cameraOverlayView: UIView?) -> Self {
         self.cameraOverlayView = cameraOverlayView
         return self
     }
@@ -1686,20 +1686,20 @@ extension UIImagePickerController {
 }
 
 extension UIImageView {
-    public func set(image: UIImage) -> Self {
+    public func set(image: UIImage?) -> Self {
         self.image = image
         return self
     }
 
     @available(iOS 3.0, *)
-    public func set(highlightedImage: UIImage) -> Self {
+    public func set(highlightedImage: UIImage?) -> Self {
         self.highlightedImage = highlightedImage
         return self
     }
 
     @available(iOS 13.0, *)
     @available(tvOS 13.0, *)
-    public func set(preferredSymbolConfiguration: UIImage.SymbolConfiguration) -> Self {
+    public func set(preferredSymbolConfiguration: UIImage.SymbolConfiguration?) -> Self {
         self.preferredSymbolConfiguration = preferredSymbolConfiguration
         return self
     }
@@ -1710,13 +1710,13 @@ extension UIImageView {
         return self
     }
 
-    public func set(animationImages: [UIImage]) -> Self {
+    public func set(animationImages: [UIImage]?) -> Self {
         self.animationImages = animationImages
         return self
     }
 
     @available(iOS 3.0, *)
-    public func set(highlightedAnimationImages: [UIImage]) -> Self {
+    public func set(highlightedAnimationImages: [UIImage]?) -> Self {
         self.highlightedAnimationImages = highlightedAnimationImages
         return self
     }
@@ -1757,12 +1757,12 @@ extension UIInputView {
 }
 
 extension UIInputViewController {
-    public func set(inputView: UIInputView) -> Self {
+    public func set(inputView: UIInputView?) -> Self {
         self.inputView = inputView
         return self
     }
 
-    public func set(primaryLanguage: String) -> Self {
+    public func set(primaryLanguage: String?) -> Self {
         self.primaryLanguage = primaryLanguage
         return self
     }
@@ -1775,29 +1775,29 @@ extension UIInputViewController {
 
 extension UIView {
     @available(iOS 11.0, tvOS 13.0, *)
-    public func set(interactions: [AnyObject & UIInteraction]) -> Self {
+    public func set(interactions: [UIInteraction]) -> Self {
         self.interactions = interactions
         return self
     }
 }
 
 extension UILabel {
-    public func set(text: String) -> Self {
+    public func set(text: String?) -> Self {
         self.text = text
         return self
     }
 
-    public func set(font: UIFont) -> Self {
+    public func set(font: UIFont!) -> Self {
         self.font = font
         return self
     }
 
-    public func set(textColor: UIColor) -> Self {
+    public func set(textColor: UIColor!) -> Self {
         self.textColor = textColor
         return self
     }
 
-    public func set(shadowColor: UIColor) -> Self {
+    public func set(shadowColor: UIColor?) -> Self {
         self.shadowColor = shadowColor
         return self
     }
@@ -1818,12 +1818,12 @@ extension UILabel {
     }
 
     @available(iOS 6.0, *)
-    public func set(attributedText: NSAttributedString) -> Self {
+    public func set(attributedText: NSAttributedString?) -> Self {
         self.attributedText = attributedText
         return self
     }
 
-    public func set(highlightedTextColor: UIColor) -> Self {
+    public func set(highlightedTextColor: UIColor?) -> Self {
         self.highlightedTextColor = highlightedTextColor
         return self
     }
@@ -1891,7 +1891,7 @@ extension UIView {
 
     #if !os(tvOS)
         @available(iOS 13.0, *)
-        public func set(largeContentTitle: String) -> Self {
+        public func set(largeContentTitle: String?) -> Self {
             self.largeContentTitle = largeContentTitle
             return self
         }
@@ -1899,7 +1899,7 @@ extension UIView {
 
     #if !os(tvOS)
         @available(iOS 13.0, *)
-        public func set(largeContentImage: UIImage) -> Self {
+        public func set(largeContentImage: UIImage?) -> Self {
             self.largeContentImage = largeContentImage
             return self
         }
@@ -1938,12 +1938,12 @@ extension UILayoutGuide {
 @available(macCatalyst, deprecated: 13.0)
 @available(tvOS, unavailable)
 extension UILocalNotification {
-    public func set(fireDate: Date) -> Self {
+    public func set(fireDate: Date?) -> Self {
         self.fireDate = fireDate
         return self
     }
 
-    public func set(timeZone: TimeZone) -> Self {
+    public func set(timeZone: TimeZone?) -> Self {
         self.timeZone = timeZone
         return self
     }
@@ -1953,7 +1953,7 @@ extension UILocalNotification {
         return self
     }
 
-    public func set(repeatCalendar: Calendar) -> Self {
+    public func set(repeatCalendar: Calendar?) -> Self {
         self.repeatCalendar = repeatCalendar
         return self
     }
@@ -1964,7 +1964,7 @@ extension UILocalNotification {
         return self
     }
 
-    public func set(alertBody: String) -> Self {
+    public func set(alertBody: String?) -> Self {
         self.alertBody = alertBody
         return self
     }
@@ -1974,23 +1974,23 @@ extension UILocalNotification {
         return self
     }
 
-    public func set(alertAction: String) -> Self {
+    public func set(alertAction: String?) -> Self {
         self.alertAction = alertAction
         return self
     }
 
-    public func set(alertLaunchImage: String) -> Self {
+    public func set(alertLaunchImage: String?) -> Self {
         self.alertLaunchImage = alertLaunchImage
         return self
     }
 
     @available(iOS 8.2, *)
-    public func set(alertTitle: String) -> Self {
+    public func set(alertTitle: String?) -> Self {
         self.alertTitle = alertTitle
         return self
     }
 
-    public func set(soundName: String) -> Self {
+    public func set(soundName: String?) -> Self {
         self.soundName = soundName
         return self
     }
@@ -2006,7 +2006,7 @@ extension UILocalNotification {
     }
 
     @available(iOS 8.0, *)
-    public func set(category: String) -> Self {
+    public func set(category: String?) -> Self {
         self.category = category
         return self
     }
@@ -2037,12 +2037,12 @@ extension UILongPressGestureRecognizer {
 
 @available(tvOS, unavailable)
 extension UIManagedDocument {
-    public func set(persistentStoreOptions: [AnyHashable: Any]) -> Self {
+    public func set(persistentStoreOptions: [AnyHashable: Any]?) -> Self {
         self.persistentStoreOptions = persistentStoreOptions
         return self
     }
 
-    public func set(modelConfiguration: String) -> Self {
+    public func set(modelConfiguration: String?) -> Self {
         self.modelConfiguration = modelConfiguration
         return self
     }
@@ -2063,7 +2063,7 @@ extension UIMenuController {
     }
 
     @available(iOS 3.2, *)
-    public func set(menuItems: [UIMenuItem]) -> Self {
+    public func set(menuItems: [UIMenuItem]?) -> Self {
         self.menuItems = menuItems
         return self
     }
@@ -2083,19 +2083,19 @@ extension UIMenuItem {
 }
 
 extension UIInterpolatingMotionEffect {
-    public func set(minimumRelativeValue: AnyObject) -> Self {
+    public func set(minimumRelativeValue: Any?) -> Self {
         self.minimumRelativeValue = minimumRelativeValue
         return self
     }
 
-    public func set(maximumRelativeValue: AnyObject) -> Self {
+    public func set(maximumRelativeValue: Any?) -> Self {
         self.maximumRelativeValue = maximumRelativeValue
         return self
     }
 }
 
 extension UIMotionEffectGroup {
-    public func set(motionEffects: [UIMotionEffect]) -> Self {
+    public func set(motionEffects: [UIMotionEffect]?) -> Self {
         self.motionEffects = motionEffects
         return self
     }
@@ -2119,7 +2119,7 @@ extension UINavigationBar {
         return self
     }
 
-    public func set(items: [UINavigationItem]) -> Self {
+    public func set(items: [UINavigationItem]?) -> Self {
         self.items = items
         return self
     }
@@ -2132,40 +2132,40 @@ extension UINavigationBar {
     }
 
     @available(iOS 7.0, *)
-    public func set(barTintColor: UIColor) -> Self {
+    public func set(barTintColor: UIColor?) -> Self {
         self.barTintColor = barTintColor
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(shadowImage: UIImage) -> Self {
+    public func set(shadowImage: UIImage?) -> Self {
         self.shadowImage = shadowImage
         return self
     }
 
     @available(iOS 5.0, *)
-    public func set(titleTextAttributes: [NSAttributedString.Key: AnyObject]) -> Self {
+    public func set(titleTextAttributes: [NSAttributedString.Key: Any]?) -> Self {
         self.titleTextAttributes = titleTextAttributes
         return self
     }
 
     @available(iOS 11.0, *)
     @available(tvOS, unavailable)
-    public func set(largeTitleTextAttributes: [NSAttributedString.Key: AnyObject]) -> Self {
+    public func set(largeTitleTextAttributes: [NSAttributedString.Key: AnyObject]?) -> Self {
         self.largeTitleTextAttributes = largeTitleTextAttributes
         return self
     }
 
     @available(iOS 7.0, *)
     @available(tvOS, unavailable)
-    public func set(backIndicatorImage: UIImage) -> Self {
+    public func set(backIndicatorImage: UIImage?) -> Self {
         self.backIndicatorImage = backIndicatorImage
         return self
     }
 
     @available(iOS 7.0, *)
     @available(tvOS, unavailable)
-    public func set(backIndicatorTransitionMaskImage: UIImage) -> Self {
+    public func set(backIndicatorTransitionMaskImage: UIImage?) -> Self {
         self.backIndicatorTransitionMaskImage = backIndicatorTransitionMaskImage
         return self
     }
@@ -2283,31 +2283,31 @@ extension UIViewController {
 
     @available(iOS 3.0, *)
     @available(tvOS, unavailable)
-    public func set(toolbarItems: [UIBarButtonItem]) -> Self {
+    public func set(toolbarItems: [UIBarButtonItem]?) -> Self {
         self.toolbarItems = toolbarItems
         return self
     }
 }
 
 extension UINavigationItem {
-    public func set(title: String) -> Self {
+    public func set(title: String?) -> Self {
         self.title = title
         return self
     }
 
-    public func set(titleView: UIView) -> Self {
+    public func set(titleView: UIView?) -> Self {
         self.titleView = titleView
         return self
     }
 
     @available(tvOS, unavailable)
-    public func set(prompt: String) -> Self {
+    public func set(prompt: String?) -> Self {
         self.prompt = prompt
         return self
     }
 
     @available(tvOS, unavailable)
-    public func set(backBarButtonItem: UIBarButtonItem) -> Self {
+    public func set(backBarButtonItem: UIBarButtonItem?) -> Self {
         self.backBarButtonItem = backBarButtonItem
         return self
     }
@@ -2319,13 +2319,13 @@ extension UINavigationItem {
     }
 
     @available(iOS 5.0, *)
-    public func set(leftBarButtonItems: [UIBarButtonItem]) -> Self {
+    public func set(leftBarButtonItems: [UIBarButtonItem]?) -> Self {
         self.leftBarButtonItems = leftBarButtonItems
         return self
     }
 
     @available(iOS 5.0, *)
-    public func set(rightBarButtonItems: [UIBarButtonItem]) -> Self {
+    public func set(rightBarButtonItems: [UIBarButtonItem]?) -> Self {
         self.rightBarButtonItems = rightBarButtonItems
         return self
     }
@@ -2337,12 +2337,12 @@ extension UINavigationItem {
         return self
     }
 
-    public func set(leftBarButtonItem: UIBarButtonItem) -> Self {
+    public func set(leftBarButtonItem: UIBarButtonItem?) -> Self {
         self.leftBarButtonItem = leftBarButtonItem
         return self
     }
 
-    public func set(rightBarButtonItem: UIBarButtonItem) -> Self {
+    public func set(rightBarButtonItem: UIBarButtonItem?) -> Self {
         self.rightBarButtonItem = rightBarButtonItem
         return self
     }
@@ -2410,13 +2410,13 @@ extension UIPageControl {
     }
 
     @available(iOS 6.0, *)
-    public func set(pageIndicatorTintColor: UIColor) -> Self {
+    public func set(pageIndicatorTintColor: UIColor?) -> Self {
         self.pageIndicatorTintColor = pageIndicatorTintColor
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(currentPageIndicatorTintColor: UIColor) -> Self {
+    public func set(currentPageIndicatorTintColor: UIColor?) -> Self {
         self.currentPageIndicatorTintColor = currentPageIndicatorTintColor
         return self
     }
@@ -2478,47 +2478,47 @@ extension UIPasteboard {
         return self
     }
 
-    public func set(items: [[String: AnyObject]]) -> Self {
+    public func set(items: [[String: Any]]) -> Self {
         self.items = items
         return self
     }
 
-    public func set(string: String) -> Self {
+    public func set(string: String?) -> Self {
         self.string = string
         return self
     }
 
-    public func set(strings: [String]) -> Self {
+    public func set(strings: [String]?) -> Self {
         self.strings = strings
         return self
     }
 
-    public func set(url: URL) -> Self {
+    public func set(url: URL?) -> Self {
         self.url = url
         return self
     }
 
-    public func set(urls: [URL]) -> Self {
+    public func set(urls: [URL]?) -> Self {
         self.urls = urls
         return self
     }
 
-    public func set(image: UIImage) -> Self {
+    public func set(image: UIImage?) -> Self {
         self.image = image
         return self
     }
 
-    public func set(images: [UIImage]) -> Self {
+    public func set(images: [UIImage]?) -> Self {
         self.images = images
         return self
     }
 
-    public func set(color: UIColor) -> Self {
+    public func set(color: UIColor?) -> Self {
         self.color = color
         return self
     }
 
-    public func set(colors: [UIColor]) -> Self {
+    public func set(colors: [UIColor]?) -> Self {
         self.colors = colors
         return self
     }
@@ -2605,13 +2605,13 @@ extension UIPopoverController {
         return self
     }
 
-    public func set(passthroughViews: [UIView]) -> Self {
+    public func set(passthroughViews: [UIView]?) -> Self {
         self.passthroughViews = passthroughViews
         return self
     }
 
     @available(iOS 7.0, *)
-    public func set(backgroundColor: UIColor) -> Self {
+    public func set(backgroundColor: UIColor?) -> Self {
         self.backgroundColor = backgroundColor
         return self
     }
@@ -2623,7 +2623,7 @@ extension UIPopoverController {
     }
 
     @available(iOS 5.0, *)
-    public func set(backgroundViewClass: AnyClass) -> Self {
+    public func set(backgroundViewClass: AnyClass?) -> Self {
         self.backgroundViewClass = backgroundViewClass
         return self
     }
@@ -2641,7 +2641,7 @@ extension UIPopoverPresentationController {
         return self
     }
 
-    public func set(sourceView: UIView) -> Self {
+    public func set(sourceView: UIView?) -> Self {
         self.sourceView = sourceView
         return self
     }
@@ -2657,17 +2657,17 @@ extension UIPopoverPresentationController {
         return self
     }
 
-    public func set(barButtonItem: UIBarButtonItem) -> Self {
+    public func set(barButtonItem: UIBarButtonItem?) -> Self {
         self.barButtonItem = barButtonItem
         return self
     }
 
-    public func set(passthroughViews: [UIView]) -> Self {
+    public func set(passthroughViews: [UIView]?) -> Self {
         self.passthroughViews = passthroughViews
         return self
     }
 
-    public func set(backgroundColor: UIColor) -> Self {
+    public func set(backgroundColor: UIColor?) -> Self {
         self.backgroundColor = backgroundColor
         return self
     }
@@ -2687,7 +2687,7 @@ extension UIPresentationController {
         return self
     }
 
-    public func set(overrideTraitCollection: UITraitCollection) -> Self {
+    public func set(overrideTraitCollection: UITraitCollection?) -> Self {
         self.overrideTraitCollection = overrideTraitCollection
         return self
     }
@@ -2710,7 +2710,7 @@ extension UIPreviewParameters {
         return self
     }
 
-    public func set(backgroundColor: UIColor?) -> Self {
+    public func set(backgroundColor: UIColor!) -> Self {
         self.backgroundColor = backgroundColor
         return self
     }
@@ -2752,23 +2752,23 @@ extension UIPrintFormatter {
 
 @available(tvOS, unavailable)
 extension UISimpleTextPrintFormatter {
-    public func set(text: String) -> Self {
+    public func set(text: String?) -> Self {
         self.text = text
         return self
     }
 
     @available(iOS 7.0, *)
-    public func set(attributedText: NSAttributedString) -> Self {
+    public func set(attributedText: NSAttributedString?) -> Self {
         self.attributedText = attributedText
         return self
     }
 
-    public func set(font: UIFont) -> Self {
+    public func set(font: UIFont?) -> Self {
         self.font = font
         return self
     }
 
-    public func set(color: UIColor) -> Self {
+    public func set(color: UIColor?) -> Self {
         self.color = color
         return self
     }
@@ -2781,7 +2781,7 @@ extension UISimpleTextPrintFormatter {
 
 @available(tvOS, unavailable)
 extension UIMarkupTextPrintFormatter {
-    public func set(markupText: String) -> Self {
+    public func set(markupText: String?) -> Self {
         self.markupText = markupText
         return self
     }
@@ -2789,7 +2789,7 @@ extension UIMarkupTextPrintFormatter {
 
 @available(tvOS, unavailable)
 extension UIPrintInfo {
-    public func set(printerID: String) -> Self {
+    public func set(printerID: String?) -> Self {
         self.printerID = printerID
         return self
     }
@@ -2817,7 +2817,7 @@ extension UIPrintInfo {
 
 @available(tvOS, unavailable)
 extension UIPrintInteractionController {
-    public func set(printInfo: UIPrintInfo) -> Self {
+    public func set(printInfo: UIPrintInfo?) -> Self {
         self.printInfo = printInfo
         return self
     }
@@ -2845,22 +2845,22 @@ extension UIPrintInteractionController {
         return self
     }
 
-    public func set(printPageRenderer: UIPrintPageRenderer) -> Self {
+    public func set(printPageRenderer: UIPrintPageRenderer?) -> Self {
         self.printPageRenderer = printPageRenderer
         return self
     }
 
-    public func set(printFormatter: UIPrintFormatter) -> Self {
+    public func set(printFormatter: UIPrintFormatter?) -> Self {
         self.printFormatter = printFormatter
         return self
     }
 
-    public func set(printingItem: AnyObject) -> Self {
+    public func set(printingItem: Any?) -> Self {
         self.printingItem = printingItem
         return self
     }
 
-    public func set(printingItems: [Any]) -> Self {
+    public func set(printingItems: [Any]?) -> Self {
         self.printingItems = printingItems
         return self
     }
@@ -2878,7 +2878,7 @@ extension UIPrintPageRenderer {
         return self
     }
 
-    public func set(printFormatters: [UIPrintFormatter]) -> Self {
+    public func set(printFormatters: [UIPrintFormatter]?) -> Self {
         self.printFormatters = printFormatters
         return self
     }
@@ -2958,7 +2958,7 @@ extension UIPushBehavior {
 
 @available(tvOS, unavailable)
 extension UIRefreshControl {
-    public func set(attributedTitle: NSAttributedString) -> Self {
+    public func set(attributedTitle: NSAttributedString?) -> Self {
         self.attributedTitle = attributedTitle
         return self
     }
@@ -2973,7 +2973,7 @@ extension UIResponder {
     }
 
     @available(iOS 8.0, *)
-    public func set(userActivity: NSUserActivity) -> Self {
+    public func set(userActivity: NSUserActivity?) -> Self {
         self.userActivity = userActivity
         return self
     }
@@ -2989,12 +2989,12 @@ extension UIRotationGestureRecognizer {
 
 @available(iOS 13.0, tvOS 13.0, *)
 extension UIScene {
-    public func set(delegate: UISceneDelegate) -> Self {
+    public func set(delegate: UISceneDelegate?) -> Self {
         self.delegate = delegate
         return self
     }
 
-    public func set(title: String) -> Self {
+    public func set(title: String!) -> Self {
         self.title = title
         return self
     }
@@ -3028,7 +3028,7 @@ extension UIScene.OpenExternalURLOptions {
 
 @available(iOS 13.0, tvOS 13.0, *)
 extension UIScene.ActivationRequestOptions {
-    public func set(requestingScene: UIScene) -> Self {
+    public func set(requestingScene: UIScene?) -> Self {
         self.requestingScene = requestingScene
         return self
     }
@@ -3046,7 +3046,7 @@ extension UISceneConfiguration {
         return self
     }
 
-    public func set(storyboard: UIStoryboard) -> Self {
+    public func set(storyboard: UIStoryboard?) -> Self {
         self.storyboard = storyboard
         return self
     }
@@ -3054,12 +3054,12 @@ extension UISceneConfiguration {
 
 @available(iOS 13.0, tvOS 13.0, *)
 extension UISceneSession {
-    public func set(stateRestorationActivity: NSUserActivity) -> Self {
+    public func set(stateRestorationActivity: NSUserActivity?) -> Self {
         self.stateRestorationActivity = stateRestorationActivity
         return self
     }
 
-    public func set(userInfo: [String: AnyObject]) -> Self {
+    public func set(userInfo: [String: Any]?) -> Self {
         self.userInfo = userInfo
         return self
     }
@@ -3274,17 +3274,17 @@ extension UISearchBar {
         return self
     }
 
-    public func set(text: String) -> Self {
+    public func set(text: String?) -> Self {
         self.text = text
         return self
     }
 
-    public func set(prompt: String) -> Self {
+    public func set(prompt: String?) -> Self {
         self.prompt = prompt
         return self
     }
 
-    public func set(placeholder: String) -> Self {
+    public func set(placeholder: String?) -> Self {
         self.placeholder = placeholder
         return self
     }
@@ -3316,7 +3316,7 @@ extension UISearchBar {
     }
 
     @available(iOS 7.0, *)
-    public func set(barTintColor: UIColor) -> Self {
+    public func set(barTintColor: UIColor?) -> Self {
         self.barTintColor = barTintColor
         return self
     }
@@ -3334,7 +3334,7 @@ extension UISearchBar {
     }
 
     @available(iOS 3.0, *)
-    public func set(scopeButtonTitles: [String]) -> Self {
+    public func set(scopeButtonTitles: [String]?) -> Self {
         self.scopeButtonTitles = scopeButtonTitles
         return self
     }
@@ -3351,19 +3351,19 @@ extension UISearchBar {
         return self
     }
 
-    public func set(inputAccessoryView: UIView) -> Self {
+    public func set(inputAccessoryView: UIView?) -> Self {
         self.inputAccessoryView = inputAccessoryView
         return self
     }
 
     @available(iOS 5.0, *)
-    public func set(backgroundImage: UIImage) -> Self {
+    public func set(backgroundImage: UIImage?) -> Self {
         self.backgroundImage = backgroundImage
         return self
     }
 
     @available(iOS 5.0, *)
-    public func set(scopeBarBackgroundImage: UIImage) -> Self {
+    public func set(scopeBarBackgroundImage: UIImage?) -> Self {
         self.scopeBarBackgroundImage = scopeBarBackgroundImage
         return self
     }
@@ -3445,7 +3445,7 @@ extension UISearchController {
 @available(iOS, introduced: 3.0, deprecated: 8.0)
 @available(tvOS, unavailable)
 extension UISearchDisplayController {
-    public func set(delegate: UISearchDisplayDelegate) -> Self {
+    public func set(delegate: UISearchDisplayDelegate?) -> Self {
         self.delegate = delegate
         return self
     }
@@ -3466,7 +3466,7 @@ extension UISearchDisplayController {
     }
 
     @available(iOS 5.0, *)
-    public func set(searchResultsTitle: String) -> Self {
+    public func set(searchResultsTitle: String?) -> Self {
         self.searchResultsTitle = searchResultsTitle
         return self
     }
@@ -3480,7 +3480,7 @@ extension UISearchDisplayController {
             return self
         }
 
-        public func set(tokenBackgroundColor: UIColor?) -> Self {
+        public func set(tokenBackgroundColor: UIColor!) -> Self {
             self.tokenBackgroundColor = tokenBackgroundColor
             return self
         }
@@ -3500,7 +3500,7 @@ extension UISearchDisplayController {
 #if !os(tvOS)
     @available(iOS 13.0, *)
     extension UISearchToken {
-        public func set(representedObject: AnyObject) -> Self {
+        public func set(representedObject: Any?) -> Self {
             self.representedObject = representedObject
             return self
         }
@@ -3525,7 +3525,7 @@ extension UISegmentedControl {
     }
 
     @available(iOS 13.0, tvOS 13.0, *)
-    public func set(selectedSegmentTintColor: UIColor) -> Self {
+    public func set(selectedSegmentTintColor: UIColor?) -> Self {
         self.selectedSegmentTintColor = selectedSegmentTintColor
         return self
     }
@@ -3548,12 +3548,12 @@ extension UISlider {
         return self
     }
 
-    public func set(minimumValueImage: UIImage) -> Self {
+    public func set(minimumValueImage: UIImage?) -> Self {
         self.minimumValueImage = minimumValueImage
         return self
     }
 
-    public func set(maximumValueImage: UIImage) -> Self {
+    public func set(maximumValueImage: UIImage?) -> Self {
         self.maximumValueImage = maximumValueImage
         return self
     }
@@ -3564,19 +3564,19 @@ extension UISlider {
     }
 
     @available(iOS 5.0, *)
-    public func set(minimumTrackTintColor: UIColor) -> Self {
+    public func set(minimumTrackTintColor: UIColor?) -> Self {
         self.minimumTrackTintColor = minimumTrackTintColor
         return self
     }
 
     @available(iOS 5.0, *)
-    public func set(maximumTrackTintColor: UIColor) -> Self {
+    public func set(maximumTrackTintColor: UIColor?) -> Self {
         self.maximumTrackTintColor = maximumTrackTintColor
         return self
     }
 
     @available(iOS 5.0, *)
-    public func set(thumbTintColor: UIColor) -> Self {
+    public func set(thumbTintColor: UIColor?) -> Self {
         self.thumbTintColor = thumbTintColor
         return self
     }
@@ -3747,25 +3747,25 @@ extension UISwipeGestureRecognizer {
 @available(tvOS, unavailable)
 extension UISwitch {
     @available(iOS 5.0, *)
-    public func set(onTintColor: UIColor) -> Self {
+    public func set(onTintColor: UIColor?) -> Self {
         self.onTintColor = onTintColor
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(thumbTintColor: UIColor) -> Self {
+    public func set(thumbTintColor: UIColor?) -> Self {
         self.thumbTintColor = thumbTintColor
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(onImage: UIImage) -> Self {
+    public func set(onImage: UIImage?) -> Self {
         self.onImage = onImage
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(offImage: UIImage) -> Self {
+    public func set(offImage: UIImage?) -> Self {
         self.offImage = offImage
         return self
     }
@@ -3782,7 +3782,7 @@ extension UITabBar {
         return self
     }
 
-    public func set(items: [UITabBarItem]) -> Self {
+    public func set(items: [UITabBarItem]?) -> Self {
         self.items = items
         return self
     }
@@ -3793,7 +3793,7 @@ extension UITabBar {
     }
 
     @available(iOS 7.0, *)
-    public func set(barTintColor: UIColor) -> Self {
+    public func set(barTintColor: UIColor?) -> Self {
         self.barTintColor = barTintColor
         return self
     }
@@ -3818,13 +3818,13 @@ extension UITabBar {
     }
 
     @available(iOS 5.0, *)
-    public func set(selectionIndicatorImage: UIImage) -> Self {
+    public func set(selectionIndicatorImage: UIImage?) -> Self {
         self.selectionIndicatorImage = selectionIndicatorImage
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(shadowImage: UIImage) -> Self {
+    public func set(shadowImage: UIImage?) -> Self {
         self.shadowImage = shadowImage
         return self
     }
@@ -3895,7 +3895,7 @@ extension UITabBarItemStateAppearance {
         return self
     }
 
-    public func set(badgeTextAttributes: [NSAttributedString.Key: AnyObject]) -> Self {
+    public func set(badgeTextAttributes: [NSAttributedString.Key: Any]) -> Self {
         self.badgeTextAttributes = badgeTextAttributes
         return self
     }
@@ -3950,12 +3950,12 @@ extension UITabBarAppearance {
 }
 
 extension UITabBarController {
-    public func set(viewControllers: [UIViewController]) -> Self {
+    public func set(viewControllers: [UIViewController]?) -> Self {
         self.viewControllers = viewControllers
         return self
     }
 
-    public func set(selectedViewController: UIViewController) -> Self {
+    public func set(selectedViewController: UIViewController?) -> Self {
         self.selectedViewController = selectedViewController
         return self
     }
@@ -3966,7 +3966,7 @@ extension UITabBarController {
     }
 
     @available(tvOS, unavailable)
-    public func set(customizableViewControllers: [UIViewController]) -> Self {
+    public func set(customizableViewControllers: [UIViewController]?) -> Self {
         self.customizableViewControllers = customizableViewControllers
         return self
     }
@@ -3978,7 +3978,7 @@ extension UITabBarController {
 }
 
 extension UIViewController {
-    public func set(tabBarItem: UITabBarItem) -> Self {
+    public func set(tabBarItem: UITabBarItem!) -> Self {
         self.tabBarItem = tabBarItem
         return self
     }
@@ -3994,12 +3994,12 @@ extension UIViewController {
 
 extension UITabBarItem {
     @available(iOS 7.0, *)
-    public func set(selectedImage: UIImage) -> Self {
+    public func set(selectedImage: UIImage?) -> Self {
         self.selectedImage = selectedImage
         return self
     }
 
-    public func set(badgeValue: String) -> Self {
+    public func set(badgeValue: String?) -> Self {
         self.badgeValue = badgeValue
         return self
     }
@@ -4332,7 +4332,7 @@ extension UITableViewCell {
 }
 
 extension UITableViewController {
-    public func set(tableView: UITableView?) -> Self {
+    public func set(tableView: UITableView!) -> Self {
         self.tableView = tableView
         return self
     }
@@ -4403,23 +4403,23 @@ extension UITextDropProposal {
 }
 
 extension UITextField {
-    public func set(text: String) -> Self {
+    public func set(text: String?) -> Self {
         self.text = text
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(attributedText: NSAttributedString) -> Self {
+    public func set(attributedText: NSAttributedString?) -> Self {
         self.attributedText = attributedText
         return self
     }
 
-    public func set(textColor: UIColor) -> Self {
+    public func set(textColor: UIColor?) -> Self {
         self.textColor = textColor
         return self
     }
 
-    public func set(font: UIFont) -> Self {
+    public func set(font: UIFont?) -> Self {
         self.font = font
         return self
     }
@@ -4435,18 +4435,18 @@ extension UITextField {
     }
 
     @available(iOS 7.0, *)
-    public func set(defaultTextAttributes: [NSAttributedString.Key: AnyObject]) -> Self {
+    public func set(defaultTextAttributes: [NSAttributedString.Key: Any]) -> Self {
         self.defaultTextAttributes = defaultTextAttributes
         return self
     }
 
-    public func set(placeholder: String) -> Self {
+    public func set(placeholder: String?) -> Self {
         self.placeholder = placeholder
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(attributedPlaceholder: NSAttributedString) -> Self {
+    public func set(attributedPlaceholder: NSAttributedString?) -> Self {
         self.attributedPlaceholder = attributedPlaceholder
         return self
     }
@@ -4471,12 +4471,12 @@ extension UITextField {
         return self
     }
 
-    public func set(background: UIImage) -> Self {
+    public func set(background: UIImage?) -> Self {
         self.background = background
         return self
     }
 
-    public func set(disabledBackground: UIImage) -> Self {
+    public func set(disabledBackground: UIImage?) -> Self {
         self.disabledBackground = disabledBackground
         return self
     }
@@ -4488,7 +4488,7 @@ extension UITextField {
     }
 
     @available(iOS 6.0, *)
-    public func set(typingAttributes: [NSAttributedString.Key: AnyObject]) -> Self {
+    public func set(typingAttributes: [NSAttributedString.Key: Any]) -> Self {
         self.typingAttributes = typingAttributes
         return self
     }
@@ -4498,7 +4498,7 @@ extension UITextField {
         return self
     }
 
-    public func set(leftView: UIView) -> Self {
+    public func set(leftView: UIView?) -> Self {
         self.leftView = leftView
         return self
     }
@@ -4508,7 +4508,7 @@ extension UITextField {
         return self
     }
 
-    public func set(rightView: UIView) -> Self {
+    public func set(rightView: UIView?) -> Self {
         self.rightView = rightView
         return self
     }
@@ -4518,12 +4518,12 @@ extension UITextField {
         return self
     }
 
-    public func set(inputView: UIView) -> Self {
+    public func set(inputView: UIView?) -> Self {
         self.inputView = inputView
         return self
     }
 
-    public func set(inputAccessoryView: UIView) -> Self {
+    public func set(inputAccessoryView: UIView?) -> Self {
         self.inputAccessoryView = inputAccessoryView
         return self
     }
@@ -4582,17 +4582,17 @@ extension UITextView {
         return self
     }
 
-    public func set(text: String) -> Self {
+    public func set(text: String!) -> Self {
         self.text = text
         return self
     }
 
-    public func set(font: UIFont) -> Self {
+    public func set(font: UIFont?) -> Self {
         self.font = font
         return self
     }
 
-    public func set(textColor: UIColor) -> Self {
+    public func set(textColor: UIColor?) -> Self {
         self.textColor = textColor
         return self
     }
@@ -4633,23 +4633,23 @@ extension UITextView {
     }
 
     @available(iOS 6.0, *)
-    public func set(attributedText: NSAttributedString) -> Self {
+    public func set(attributedText: NSAttributedString!) -> Self {
         self.attributedText = attributedText
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(typingAttributes: [NSAttributedString.Key: AnyObject]) -> Self {
+    public func set(typingAttributes: [NSAttributedString.Key: Any]) -> Self {
         self.typingAttributes = typingAttributes
         return self
     }
 
-    public func set(inputView: UIView) -> Self {
+    public func set(inputView: UIView?) -> Self {
         self.inputView = inputView
         return self
     }
 
-    public func set(inputAccessoryView: UIView) -> Self {
+    public func set(inputAccessoryView: UIView?) -> Self {
         self.inputAccessoryView = inputAccessoryView
         return self
     }
@@ -4667,7 +4667,7 @@ extension UITextView {
     }
 
     @available(iOS 7.0, *)
-    public func set(linkTextAttributes: [NSAttributedString.Key: AnyObject]) -> Self {
+    public func set(linkTextAttributes: [NSAttributedString.Key: Any]!) -> Self {
         self.linkTextAttributes = linkTextAttributes
         return self
     }
@@ -4686,7 +4686,7 @@ extension UIToolbar {
         return self
     }
 
-    public func set(items: [UIBarButtonItem]) -> Self {
+    public func set(items: [UIBarButtonItem]?) -> Self {
         self.items = items
         return self
     }
@@ -4698,7 +4698,7 @@ extension UIToolbar {
     }
 
     @available(iOS 7.0, *)
-    public func set(barTintColor: UIColor) -> Self {
+    public func set(barTintColor: UIColor?) -> Self {
         self.barTintColor = barTintColor
         return self
     }
@@ -4738,7 +4738,7 @@ extension UIToolbarAppearance {
 @available(macCatalyst, deprecated: 13.0)
 @available(tvOS, unavailable)
 extension UIMutableUserNotificationCategory {
-    public func set(identifier: String) -> Self {
+    public func set(identifier: String?) -> Self {
         self.identifier = identifier
         return self
     }
@@ -4747,12 +4747,12 @@ extension UIMutableUserNotificationCategory {
 @available(macCatalyst, deprecated: 13.0)
 @available(tvOS, unavailable)
 extension UIMutableUserNotificationAction {
-    public func set(identifier: String) -> Self {
+    public func set(identifier: String?) -> Self {
         self.identifier = identifier
         return self
     }
 
-    public func set(title: String) -> Self {
+    public func set(title: String?) -> Self {
         self.title = title
         return self
     }
@@ -4787,7 +4787,7 @@ extension UIMutableUserNotificationAction {
 
 @available(tvOS, unavailable)
 extension UIVideoEditorController {
-    public func set(delegate: UINavigationControllerDelegate & UIVideoEditorControllerDelegate) -> Self {
+    public func set(delegate: (UINavigationControllerDelegate & UIVideoEditorControllerDelegate)?) -> Self {
         self.delegate = delegate
         return self
     }
@@ -4908,7 +4908,7 @@ extension UIView {
         return self
     }
 
-    public func set(backgroundColor: UIColor) -> Self {
+    public func set(backgroundColor: UIColor?) -> Self {
         self.backgroundColor = backgroundColor
         return self
     }
@@ -4939,13 +4939,13 @@ extension UIView {
     }
 
     @available(iOS 8.0, *)
-    public func set(mask: UIView) -> Self {
+    public func set(mask: UIView?) -> Self {
         self.mask = mask
         return self
     }
 
     @available(iOS 7.0, *)
-    public func set(tintColor: UIColor) -> Self {
+    public func set(tintColor: UIColor!) -> Self {
         self.tintColor = tintColor
         return self
     }
@@ -4957,7 +4957,7 @@ extension UIView {
     }
 
     @available(iOS 3.2, *)
-    public func set(gestureRecognizers: [UIGestureRecognizer]) -> Self {
+    public func set(gestureRecognizers: [UIGestureRecognizer]?) -> Self {
         self.gestureRecognizers = gestureRecognizers
         return self
     }
@@ -4975,7 +4975,7 @@ extension UIView {
     }
 
     @available(iOS 6.0, *)
-    public func set(restorationIdentifier: String) -> Self {
+    public func set(restorationIdentifier: String?) -> Self {
         self.restorationIdentifier = restorationIdentifier
         return self
     }
@@ -4988,12 +4988,12 @@ extension UIView {
 }
 
 extension UIViewController {
-    public func set(view: UIView) -> Self {
+    public func set(view: UIView!) -> Self {
         self.view = view
         return self
     }
 
-    public func set(title: String) -> Self {
+    public func set(title: String?) -> Self {
         self.title = title
         return self
     }
@@ -5073,13 +5073,13 @@ extension UIViewController {
     }
 
     @available(iOS 6.0, *)
-    public func set(restorationIdentifier: String) -> Self {
+    public func set(restorationIdentifier: String?) -> Self {
         self.restorationIdentifier = restorationIdentifier
         return self
     }
 
     @available(iOS 6.0, *)
-    public func set(restorationClass: UIViewControllerRestoration.Type) -> Self {
+    public func set(restorationClass: UIViewControllerRestoration.Type?) -> Self {
         self.restorationClass = restorationClass
         return self
     }
@@ -5121,7 +5121,7 @@ extension UIPercentDrivenInteractiveTransition {
     }
 
     @available(iOS 10.0, tvOS 10.0, *)
-    public func set(timingCurve: UITimingCurveProvider) -> Self {
+    public func set(timingCurve: UITimingCurveProvider?) -> Self {
         self.timingCurve = timingCurve
         return self
     }
@@ -5174,7 +5174,7 @@ extension UIVisualEffectView {
 @available(tvOS, unavailable)
 extension UIWebView {
     @available(tvOS, unavailable)
-    public func set(delegate: UIWebViewDelegate) -> Self {
+    public func set(delegate: UIWebViewDelegate?) -> Self {
         self.delegate = delegate
         return self
     }
@@ -5288,7 +5288,7 @@ extension UIWindow {
     }
 
     @available(iOS 4.0, *)
-    public func set(rootViewController: UIViewController) -> Self {
+    public func set(rootViewController: UIViewController?) -> Self {
         self.rootViewController = rootViewController
         return self
     }
