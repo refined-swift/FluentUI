@@ -892,11 +892,6 @@ extension UICollectionViewLayoutAttributes {
         return self
     }
 
-    public func set(transform3D: CATransform3D) -> Self {
-        self.transform3D = transform3D
-        return self
-    }
-
     @available(iOS 7.0, *)
     public func set(bounds: CGRect) -> Self {
         self.bounds = bounds
@@ -4842,12 +4837,6 @@ extension UIView {
 
     public func set(transform: CGAffineTransform) -> Self {
         self.transform = transform
-        return self
-    }
-
-    @available(iOS 12.0, tvOS 12.0, *)
-    public func set(transform3D: CATransform3D) -> Self {
-        self.transform3D = transform3D
         return self
     }
 
