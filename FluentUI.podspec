@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "FluentUI"
-  spec.version      = "0.2.0"
+  spec.version      = "0.3.0"
   spec.summary      = "Fluent interface for UIKit."
 
   spec.description  = <<-DESC
